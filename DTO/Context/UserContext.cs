@@ -20,7 +20,7 @@ namespace DTO.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=ISB-L-0919-082\SQLEXPRESS;Initial Catalog=Doctor_Patient_Portal;Integrated Security=True");
+                optionsBuilder.UseSqlServer(@"Data Source=ISB-L-0919-083\SQLEXPRESS;Initial Catalog=Doctor_Patient_Portal;Integrated Security=True");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -30,6 +30,6 @@ namespace DTO.Context
 
 
 
-        public virtual DbSet<Users> Users { get; set; } //Mapping
+        public virtual DbSet<User> Users { get; set; } //Mapping
     }
 }

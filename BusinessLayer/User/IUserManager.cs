@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessLayer.User
+namespace BusinessLayer.UserManager
 {
-   public interface IUserManager
+    public interface IUserManager
     {
-        //string Signup (Users user);
-        Users Login(string emailAddress,string password);
+        User Login(string emailAddress, string password);
+        bool Register(User user);
     }
 }

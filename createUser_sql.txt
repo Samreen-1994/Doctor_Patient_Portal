@@ -5,7 +5,7 @@ create table Users
     lastName varchar(255),
     email varchar(255),
     password varchar(255),
-    phone int,
+    phone bigint,
     speciality varchar(255),
     gender varchar(255),
     bloodGroup varchar(255),
@@ -14,7 +14,7 @@ create table Users
     userType int,
     address  varchar(255),
     storeName varchar(255),
-	latitude int,
-	longitude int,
+	latitude float,
+	longitude float,
     deleted bit
 )

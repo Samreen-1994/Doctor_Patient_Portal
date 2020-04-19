@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BusinessLayer.User;
+using BusinessLayer.UserManager;
 using DTO.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,11 +28,16 @@ namespace Doctor_Patient_Portal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString= Configuration.GetConnectionString("DBConnString");
-            services.AddDbContext<UserContext>(options => options.UseSqlServer(connectionString));
+            //var connectionString= Configuration.GetConnectionString("DBConnString");
+            //services.AddDbContext<UserContext>(options => options.UseSqlServer(connectionString));
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+            {
+                builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+            }));
+
             services.AddSingleton<IUserManager, UserManager>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +54,9 @@ namespace Doctor_Patient_Portal
             }
 
             app.UseHttpsRedirection();
+
+            // Make sure you call this before calling app.UseMvc()
+            app.UseCors("ApiCorsPolicy");
             app.UseMvc();
         }
     }

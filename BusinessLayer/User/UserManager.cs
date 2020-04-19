@@ -7,56 +7,29 @@ using System.Text;
 using System.Linq;
 using System.Collections;
 
-namespace BusinessLayer.User
+namespace BusinessLayer.UserManager
 {
     public class UserManager : IUserManager
     {
-        public Users Login(string emailAddress, string password)
+        public User Login(string emailAddress, string password)
         {
             using (UserContext dc = new UserContext())
             {
-                var query = from u in dc.Users
-                            where u.Email_Address == emailAddress
-                            select u;
-                var user = query.FirstOrDefault<Users>();
+                var user = dc.Users.Where(x => x.email.Equals(emailAddress) && x.password.Equals(password)).FirstOrDefault();
                 return user;
             }
         }
 
 
-        public List<Users> Register(Users user)
+        public bool Register(User user)
         {
             using (UserContext dc = new UserContext())
             {
-      
-            var userModel = dc.Users.Include("Users")
-                           .Select(u => new Users()
-                           {
-                               ID = u.ID,
-                               User_Name = u.User_Name,
-                               Email_Address = u.Email_Address,
-                               Password = u.Password,
-                               User_Type = u.User_Type,
-                               Permission_Flag = u.Permission_Flag,
-                               Phone = u.Phone,
-                               isDeleted = u.isDeleted,
-                               First_Name = u.First_Name,
-                               Last_Name=u.Last_Name,
-                               Speciality=u.Speciality,
-                               BloodGroup=u.BloodGroup,
-                               Age=u.Age,
-                               City=u.City,
-                               Address=u.Address,
-                               StoreName=u.StoreName
-                           }).ToList<Users>();
+                dc.Users.Add(user);
+                dc.SaveChanges();
 
-                if (userModel.Count == 0)
-                {
-                    return null;
-                }
-                return (userModel);
+                return true;
             }
-             
         }
     }
 }

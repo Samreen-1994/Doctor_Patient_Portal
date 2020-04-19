@@ -4,12 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Doctor_Patient_Portal;
-using BusinessLayer.User;
+using BusinessLayer.UserManager;
 using Doctor_Patient_Portal.Classes;
+using DTO;
+using Microsoft.AspNetCore.Cors;
 
 namespace Doctor_Patient_Portal.Controllers
 {
     [Route("api/users")]
+    [Produces("application/json")]
+    [ApiController]
     public class UsersController : ControllerBase
     {
         private readonly IUserManager userManager;
@@ -19,20 +23,38 @@ namespace Doctor_Patient_Portal.Controllers
         }
 
 
-        [Route("getCurrentUser")]
+        [Route("loginUser")]
         [HttpPost]
-        public IActionResult Login(LoginModel model)
+        public IActionResult Login([FromBody]LoginModel model)
         {
             if (string.IsNullOrEmpty(model.email) && string.IsNullOrEmpty(model.password))
             {
-                return Ok("No User exists");
+                return Ok("noUserFound");
             }
-            if (model.email == null)
+            var user = userManager.Login(model.email, model.password);
+            if (user != null)
             {
-                return Ok("Please enter email address");
+                return Ok(user);
             }
-            var user = userManager.Login(model.email,model.password);
-            return Ok(user);
+            else
+            {
+                return Ok("noUserFound");
+            }
+        }
+
+        [Route("registerUser")]
+        [HttpPost]
+        public IActionResult Register(User user)
+        {
+            try
+            {
+                var success = userManager.Register(user);
+                return Ok(success);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

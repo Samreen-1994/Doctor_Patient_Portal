@@ -5,25 +5,26 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DTO
 {
     [Table("Users")]
-    public class Users
+    public class User
     {
-        public string User_Name { get; set; }
-        public string Email_Address { get; set; }
-        public string Password { get; set; }
-        public string User_Type { get; set; }
-        public bool? Permission_Flag { get; set; }
-        public string Phone { get; set; }
-        public bool? isDeleted { get; set; }
         [Key]
-        public int? ID { get; set; }
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
-        public string Speciality { get; set; }
-        public string BloodGroup { get; set; }
-        public int? Age { get; set; }
-        public string City { get; set; }
-        public string Address { get; set; }
-        public string StoreName { get; set; }
+        public int? userId { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
+        public long phone { get; set; }
+        public string speciality { get; set; }
+        public string gender { get; set; }
+        public string bloodGroup { get; set; }
+        public int age { get; set; }
+        public string city { get; set; }
+        public int userType { get; set; }
+        public string address { get; set; }
+        public string storeName { get; set; }
+        public double latitude { get; set; }
+        public double longitude { get; set; }
+        public bool deleted { get; set; }
     }
 
 }
