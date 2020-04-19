@@ -1,0 +1,7 @@
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DTO\bin\Debug\netstandard2.0\DTO.deps.json
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DTO\bin\Debug\netstandard2.0\DTO.dll
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DTO\bin\Debug\netstandard2.0\DTO.pdb
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DTO\obj\Debug\netstandard2.0\DTO.AssemblyInfoInputs.cache
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DTO\obj\Debug\netstandard2.0\DTO.AssemblyInfo.cs
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DTO\obj\Debug\netstandard2.0\DTO.dll
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DTO\obj\Debug\netstandard2.0\DTO.pdb

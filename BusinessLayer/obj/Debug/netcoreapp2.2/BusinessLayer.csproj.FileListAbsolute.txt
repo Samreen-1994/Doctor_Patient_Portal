@@ -1,0 +1,11 @@
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\bin\Debug\netcoreapp2.2\BusinessLayer.deps.json
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\bin\Debug\netcoreapp2.2\BusinessLayer.dll
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\bin\Debug\netcoreapp2.2\BusinessLayer.pdb
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\bin\Debug\netcoreapp2.2\DTO.dll
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\bin\Debug\netcoreapp2.2\DTO.pdb
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\obj\Debug\netcoreapp2.2\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\obj\Debug\netcoreapp2.2\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\obj\Debug\netcoreapp2.2\BusinessLayer.AssemblyInfo.cs
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\obj\Debug\netcoreapp2.2\BusinessLayer.csproj.CopyComplete
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\obj\Debug\netcoreapp2.2\BusinessLayer.dll
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\BusinessLayer\obj\Debug\netcoreapp2.2\BusinessLayer.pdb

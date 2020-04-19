@@ -1,0 +1,5 @@
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DependencyResolver\obj\Debug\netcoreapp3.1\DependencyResolver.csprojAssemblyReference.cache
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DependencyResolver\obj\Debug\netcoreapp3.1\DependencyResolver.AssemblyInfoInputs.cache
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DependencyResolver\obj\Debug\netcoreapp3.1\DependencyResolver.AssemblyInfo.cs
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DependencyResolver\bin\Debug\netcoreapp3.1\DependencyResolver.deps.json
+C:\Users\maheen_ali\source\repos\Doctor_Patient_Portal\DependencyResolver\bin\Debug\netcoreapp3.1\DependencyResolver.dll
