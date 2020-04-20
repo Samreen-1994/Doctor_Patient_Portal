@@ -10,4 +10,10 @@ namespace Doctor_Patient_Portal.Classes
         public string email { get; set; }
         public string password { get; set; }
     }
+
+    public class LocationRequest
+    {
+        public double latitude { get; set; }
+        public double longitude { get; set; }
+    }
 }
