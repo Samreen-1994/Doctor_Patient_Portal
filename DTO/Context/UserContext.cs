@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BusinessLayer.DTOModel;
+using DTO.DBModels;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -25,11 +27,10 @@ namespace DTO.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Query<PatientAppointmentResponse>();
         }
-        // protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlServer(Configuration.GetConnectionString("DBConnString"));
-
-
 
         public virtual DbSet<User> Users { get; set; } //Mapping
+        public virtual DbSet<Appointment> Appointments { get; set; } //Mapping
     }
 }
