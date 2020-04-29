@@ -72,6 +72,21 @@ namespace Doctor_Patient_Portal.Controllers
             }
         }
 
+        [Route("fetchAllUsers")]
+        [HttpGet]
+        public IActionResult FetchAllUsers()
+        {
+            try
+            {
+                var success = userManager.FetchAllUsers();
+                return Ok(success);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
     }
 }

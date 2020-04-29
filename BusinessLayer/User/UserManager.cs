@@ -11,6 +11,8 @@ namespace BusinessLayer.UserManager
 {
     public class UserManager : IUserManager
     {
+        
+
         public User Login(string emailAddress, string password)
         {
             using (UserContext dc = new UserContext())
@@ -41,14 +43,33 @@ namespace BusinessLayer.UserManager
         {
             using (UserContext dc = new UserContext())
             {
-                var u = dc.Users.Where(x => x.userId == user.userId && user.deleted == false).FirstOrDefault();
+                var u = dc.Users.Where(x => x.userId == user.userId).FirstOrDefault();
                 u.deleted = user.deleted;
                 u.blocked = user.blocked;
+                u.city = user.city;
+                u.firstName = user.firstName;
+                u.lastName = user.lastName;
 
                 dc.Users.Update(u);
                 dc.SaveChanges();
 
                 return true;
+            }
+        }
+
+        public List<User> FetchAllUsers()
+        {
+            using (UserContext dc = new UserContext())
+            {
+                var u = dc.Users.Where(x => x.deleted == false && x.userType !=0).ToList();
+                if (u != null)
+                {
+                    return u;
+                }
+                else
+                {
+                    return new List<User>();
+                }
             }
         }
     }
