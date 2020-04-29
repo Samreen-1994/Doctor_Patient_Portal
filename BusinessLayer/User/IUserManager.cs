@@ -9,5 +9,6 @@ namespace BusinessLayer.UserManager
     {
         User Login(string emailAddress, string password);
         bool Register(User user);
+        bool UpdateUser(User user);
     }
 }

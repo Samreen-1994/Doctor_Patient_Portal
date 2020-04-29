@@ -24,6 +24,7 @@ namespace BusinessLayer.Patient
                     app.deleted = appointment.deleted;
                     app.appointmentApproved = appointment.appointmentApproved;
                     app.appointmentCompleted = appointment.appointmentCompleted;
+                    app.appointmentSchedule = appointment.appointmentSchedule;
                     app.appointmentTitle = appointment.appointmentTitle;
                     app.appointmentDescription = appointment.appointmentDescription;
                     userContext.Appointments.Update(app);

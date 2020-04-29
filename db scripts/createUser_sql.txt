@@ -16,7 +16,22 @@ create table Users
     storeName varchar(255),
 	latitude float,
 	longitude float,
-    deleted bit
+    deleted bit,
+	blocked bit
+)
+
+
+insert into Users
+(
+firstName,
+lastName,
+email,
+password,
+userType,
+deleted,
+blocked)
+values (
+'admin','panel','admin@gmail.com','admin',0,0,0
 )
 
 

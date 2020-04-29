@@ -25,7 +25,27 @@ namespace BusinessLayer.UserManager
         {
             using (UserContext dc = new UserContext())
             {
+                if (user.userType == 2 || user.userType == 3)
+                {
+                    user.blocked = true;
+                }
+
                 dc.Users.Add(user);
+                dc.SaveChanges();
+
+                return true;
+            }
+        }
+
+        public bool UpdateUser(User user)
+        {
+            using (UserContext dc = new UserContext())
+            {
+                var u = dc.Users.Where(x => x.userId == user.userId && user.deleted == false).FirstOrDefault();
+                u.deleted = user.deleted;
+                u.blocked = user.blocked;
+
+                dc.Users.Update(u);
                 dc.SaveChanges();
 
                 return true;

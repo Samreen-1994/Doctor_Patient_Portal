@@ -56,5 +56,22 @@ namespace Doctor_Patient_Portal.Controllers
                 throw ex;
             }
         }
+
+        [Route("editUser")]
+        [HttpPost]
+        public IActionResult EditUser(User user)
+        {
+            try
+            {
+                var success = userManager.UpdateUser(user);
+                return Ok(success);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

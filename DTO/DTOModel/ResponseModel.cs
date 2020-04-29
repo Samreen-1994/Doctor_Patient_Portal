@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace BusinessLayer.DTOModel
@@ -15,5 +16,17 @@ namespace BusinessLayer.DTOModel
         public string appointmentDescription { get; set; }
         public bool appointmentCompleted { get; set; }
         public bool appointmentApproved { get; set; }
+    }
+
+    public class MedicineRequestResponse
+    {
+        public string Name { get; set; }
+        public string city { get; set; }
+        public long phone { get; set; }
+        public string email { get; set; }
+        public string requestText { get; set; }
+        public string requestImage { get; set; }
+        public string requestResponse { get; set; }
+        public int requestId { get; set; }
     }
 }

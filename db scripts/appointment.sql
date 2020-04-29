@@ -39,7 +39,7 @@ where
  alter procedure getPatientAppointments(@patientId int) as 
 select 
   a.appointmentId, 
-  doctor.firstName + doctor.lastName as doctorName, 
+  patient.firstName +' '+ patient.lastName as doctorName, 
   a.doctorId, 
   a.patientId, 
   a.appointmentTitle, 
@@ -54,6 +54,30 @@ from
   and patient.userType = 2 
   and patient.userId = @patientId 
   inner join Users doctor on a.doctorId = doctor.userId 
+where 
+  patient.deleted = 0 
+  and doctor.deleted = 0 
+  and a.deleted = 0
+  
+  
+  CREATE procedure getDoctorAppointments(@doctorId int) as 
+select 
+  a.appointmentId, 
+  patient.firstName +' '+ patient.lastName as doctorName, 
+  a.doctorId, 
+  a.patientId, 
+  a.appointmentTitle, 
+  a.appointmentSchedule, 
+  a.appointmentDescription, 
+  a.appointmentCompleted, 
+  a.appointmentApproved, 
+  a.deleted 
+from 
+  Users doctor 
+  inner join appointment a on doctor.userId = a.doctorId 
+  and doctor.userType = 1 
+  and doctor.userId = @doctorId 
+  inner join Users patient on a.patientId = patient.userId 
 where 
   patient.deleted = 0 
   and doctor.deleted = 0 

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLayer.Doctor;
 using BusinessLayer.Patient;
+using BusinessLayer.Store;
 using BusinessLayer.UserManager;
 using DTO.Context;
 using Microsoft.AspNetCore.Builder;
@@ -19,12 +21,14 @@ namespace Doctor_Patient_Portal
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment environment)
         {
             Configuration = configuration;
+            Environment = environment;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment Environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -36,6 +40,9 @@ namespace Doctor_Patient_Portal
 
             services.AddSingleton<IUserManager, UserManager>();
             services.AddSingleton<IPatientManager, PatientManager>();
+            services.AddSingleton<IDoctorManager, DoctorManager>();
+            services.AddSingleton<IStoreManager, StoreManager>();
+            services.AddSingleton<IHostingEnvironment>(Environment);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
         }

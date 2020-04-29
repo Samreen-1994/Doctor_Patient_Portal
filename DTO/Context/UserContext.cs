@@ -28,9 +28,11 @@ namespace DTO.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Query<PatientAppointmentResponse>();
+            modelBuilder.Query<MedicineRequestResponse>();
         }
 
         public virtual DbSet<User> Users { get; set; } //Mapping
         public virtual DbSet<Appointment> Appointments { get; set; } //Mapping
+        public virtual DbSet<MedicineRequest> MedicineRequests { get; set; } //Mapping
     }
 }
