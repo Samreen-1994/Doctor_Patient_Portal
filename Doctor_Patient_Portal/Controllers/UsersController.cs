@@ -74,12 +74,32 @@ namespace Doctor_Patient_Portal.Controllers
 
         [Route("fetchAllUsers")]
         [HttpGet]
-        public IActionResult FetchAllUsers()
+        public IActionResult FetchAllUsers(int userType, string userSearch)
         {
             try
             {
-                var success = userManager.FetchAllUsers();
+                var success = userManager.FetchAllUsers(userType,userSearch);
                 return Ok(success);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [Route("ConfirmPatientEmail")]
+        [HttpGet]
+        public IActionResult ConfirmPatientEmail(int patientId)
+        {
+            try
+            {
+                var user = new User();
+                user.userId = patientId;
+                user.blocked = false;
+                user.deleted = false;
+
+                var success = userManager.UpdateUser(user);
+                return Redirect(@"http://localhost:4200/");
             }
             catch (Exception ex)
             {

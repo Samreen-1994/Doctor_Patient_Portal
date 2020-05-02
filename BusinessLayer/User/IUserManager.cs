@@ -11,6 +11,6 @@ namespace BusinessLayer.UserManager
         bool Register(User user);
         bool UpdateUser(User user);
 
-        List<User> FetchAllUsers();
+        List<User> FetchAllUsers(int userType, string userSearch);
     }
 }
