@@ -42,7 +42,7 @@ namespace BusinessLayer.UserManager
             mail.Body = htmlString;
             SmtpServer.Port = 587;
             SmtpServer.UseDefaultCredentials = false;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("samreenfarooqi1994@gmail.com", "TestPass"); // Place your credentials here.
+            SmtpServer.Credentials = new System.Net.NetworkCredential("samreenfarooqi1994@gmail.com", "Samreen_oo11"); // Place your credentials here.
             SmtpServer.EnableSsl = true;
 
             SmtpServer.Send(mail);
@@ -53,7 +53,7 @@ namespace BusinessLayer.UserManager
         {
             using (UserContext dc = new UserContext())
             {
-                var found = dc.Users.Where(x => x.email.Equals(user.email) && x.deleted == false);
+                var found = dc.Users.Where(x => x.email.Equals(user.email) && x.deleted == false).FirstOrDefault();
                 if (found != null)
                 {
                     return false;
