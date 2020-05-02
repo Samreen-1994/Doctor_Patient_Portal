@@ -58,12 +58,10 @@ namespace BusinessLayer.UserManager
                 {
                     return false;
                 }
-
-                if (user.userType == 2 || user.userType == 3)
-                    if (user.userType == 1 || user.userType == 2)
-                    {
-                        user.blocked = true;
-                    }
+                if (user.userType == 1 || user.userType == 2)
+                {
+                    user.blocked = true;
+                }
                 dc.Users.Add(user);
                 dc.SaveChanges();
 
